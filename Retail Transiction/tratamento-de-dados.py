@@ -37,9 +37,7 @@ dataframe_clientes["Price"] = dataframe_clientes["Price"].map(
 dataframe_clientes["TotalAmount"] = dataframe_clientes["TotalAmount"].map(
     lambda x: locale.currency(x, grouping=True))  # Convertendo o total para o sistema monetário do Brasil
 dataframe_clientes["DiscountApplied(%)"] = (
-    dataframe_clientes["DiscountApplied(%)"] / 100)  # Colocando a coluna de discontos na casa decimal correta
-dataframe_clientes["DiscountApplied(%)"] = (
-    dataframe_clientes["DiscountApplied(%)"] * 100).apply(lambda x: '{:.2f}%'.format(x))  # Convertendo para porcentagem e mostrando apenas 2 casas depois da virgula
+    dataframe_clientes["DiscountApplied(%)"] / 100)  # Colocando a coluna de descontos na casa decimal correta
 
 # Debug
 # print(dataframe_clientes.count())
